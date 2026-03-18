@@ -79,21 +79,32 @@ background:orange;
 
 <br>
 
+<!-- FORM THÊM GIỎ HÀNG -->
 <form method="post" action="view/themgiohang.php">
+    <input type="hidden" name="masp" value="<?php echo $row["MaSP"]; ?>">
+    <input type="hidden" name="tensp" value="<?php echo $row["TenSP"]; ?>">
+    <input type="hidden" name="gia" value="<?php echo $row["Gia"]; ?>">
+    <input type="hidden" name="hinhanh" value="<?php echo $row["HinhAnh"]; ?>">
 
-<input type="hidden" name="masp" value="<?php echo $row["MaSP"]; ?>">
-<input type="hidden" name="tensp" value="<?php echo $row["TenSP"]; ?>">
-<input type="hidden" name="gia" value="<?php echo $row["Gia"]; ?>">
-<input type="hidden" name="hinhanh" value="<?php echo $row["HinhAnh"]; ?>">
-Số lượng:
-<input type="number" name="soluong" value="1" min="1">
+    Số lượng:
+    <input type="number" name="soluong" value="1" min="1">
 
-<br><br>
+    <br><br>
 
-<button class="btn-cart">
-Thêm vào giỏ hàng
-</button>
+    <button class="btn-cart">Thêm vào giỏ hàng</button>
+</form>
 
+<br>
+
+<!-- FORM MUA NGAY -->
+<form method="post" action="index.php?page=datHang">
+    <input type="hidden" name="masp" value="<?php echo $row["MaSP"]; ?>">
+    <input type="hidden" name="tensp" value="<?php echo $row["TenSP"]; ?>">
+    <input type="hidden" name="gia" value="<?php echo $row["Gia"]; ?>">
+    <input type="hidden" name="hinhanh" value="<?php echo $row["HinhAnh"]; ?>">
+    <input type="hidden" name="soluong" value="1">
+
+    <button class="btn-cart">Mua ngay</button>
 </form>
 
 <br>

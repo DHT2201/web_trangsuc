@@ -63,7 +63,7 @@ border-radius:5px;
 <li><a href="?page=quanly&type=thuonghieu">Quản lý thương hiệu</a></li>
 
 <li><a href="?page=quanly&type=sanpham">Quản lý sản phẩm</a></li>
-
+<li><a href="?page=quanly&type=donhang">Quản lý đơn hàng</a></li>
 <li><a href="?page=quanly&action=insert">Thêm sản phẩm</a></li>
 
 </ul>
@@ -94,8 +94,10 @@ include_once("view/xoasanpham.php");
 }elseif(isset($_REQUEST['action']) && $_REQUEST['action']=='insert'){
 
 include_once("view/themsanpham.php");
-
-}else{
+}elseif(isset($_REQUEST['type']) && $_REQUEST['type']=='donhang'){
+    include_once("view/adDonHang.php");
+}
+else{
 
 echo "<h2>Trang quản lý</h2>";
 echo "<p>Chọn chức năng bên trái để quản lý.</p>";
